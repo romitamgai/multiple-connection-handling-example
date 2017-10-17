@@ -27,6 +27,7 @@ app.get('/', dbware.resolveConnection, async (req, res, next) => {
 
       } catch (e) {
         console.log('error', e);
+        return;
       }
 
       res.json({ body: response[0].name });
@@ -37,6 +38,7 @@ app.get('/', dbware.resolveConnection, async (req, res, next) => {
 
     } catch (e) {
       console.log('error', e);
+      return;
     }
 
     res.json({ body: response[0].name });
